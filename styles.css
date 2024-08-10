@@ -459,10 +459,10 @@ header {
     color: #555;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 749px) {
     .leader-card {
-        max-width: 90%; /* One card per row on mobile */
+        max-width: 90%;
     }
 
     .leader-info h3 {
@@ -476,9 +476,10 @@ header {
 
 @media (min-width: 750px) {
     .leader-card {
-        flex: 1 1 45%; /* Ensures two cards per row for tablet and above */
+        flex: 1 1 45%; 
     }
 }
+
 
 /* Locate Us Section */
 .locate-us {

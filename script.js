@@ -42,6 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.closeModal = closeModal;
 });
 
+// document.querySelectorAll(".leader-card").forEach((card) => {
+//   card.addEventListener("click", () => {
+//     card.classList.toggle("active");
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   const clients = Array.from(container.children);
@@ -80,12 +86,26 @@ document
 
     emailjs.send("service_0k092ve", "template_eja213b", templateParams).then(
       function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Message sent successfully!");
+        Toastify({
+          text: "Email sent successfully!",
+          duration: 3000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
       },
       function (error) {
-        console.log("FAILED...", error);
-        alert("Message failed to send.");
+        Toastify({
+          text: "Failed to send email!",
+          duration: 3000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
       }
     );
   });
